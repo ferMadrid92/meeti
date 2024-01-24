@@ -1,0 +1,32 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.notwebp.notavif .hero {
+    @include m.bgImage('jpg');
+}
+.webp .hero {
+    @include m.bgImage('webp');
+}
+.avif .hero {
+    @include m.bgImage('avif');
+}
+.hero {
+    min-height: 60rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    &__texto {
+        max-width: 90%;
+        color: v.$blanco;
+        @include m.tablet { 
+            max-width: 60rem;
+        }
+    }
+    &__enlace {
+        @include m.boton(v.$terciario, v.$blanco)
+        
+    }
+}
